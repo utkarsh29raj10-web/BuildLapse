@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-backgorund: var(--bg);
+  --color-content: var(--content);
+  --color-buttons: var(--buttons);
+  --color-alert: var(--alert);
+  --color-button-text: var(--button-text);
+
+  --font-main: var(--font-outfit);
+
+  --text-xs: var(--text-xs);
+  --text-s: var(--text-s);
+  --text-m: var(--text-m);
+  --text-l: var(--text-l);
+  --text-xl: var(--text-xl);
+}
+
+:root {
+  --font-outfit: "Outfit", sans-serif;
+
+  --bg: #F4F4F5;
+  --content: #18181B;
+  --buttons: #0083FE;
+  --alert: #EF4444;
+  --button-text: #F4F4F5;
+
+  --text-xs: 10px;
+  --text-s: 12px;
+  --text-m: 16px;
+  --text-l: 22px;
+  --text-xl: 28px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --text-xs: 12px;
+    --text-s: 14px;
+    --text-m: 20px;
+    --text-l: 28px;
+    --text-xl: 36px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #18181B;
+    --content: #F4F4F5;
+    --buttons: #0083FE;
+    --alert: #F87171;
+    --button-text: #F4F4F5;
+  }
+}
+
+.dark {
+  --bg: #18181B;
+  --content: #F4F4F5;
+  --buttons: #0083FE;
+  --alert: #F87171;
+  --button-text: #F4F4F5;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--content);
+  font-family: var(--font-main), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.glass-panel {
+  background: rgba(244, 244, 245, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(24, 24, 27, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass-panel {
+    background: rgba(24, 24, 27, 0.6);
+    border-bottom: 1px solid rgba(244, 244, 245, 0.05);
+  }
+}
+
+.dark .glass-panel {
+  background: rgba(24, 24, 27, 0.6);
+  border-bottom: 1px solid rgba(244, 244, 245, 0.05);
+}
+
+button, a{
+  cursor: pointer;
+}
