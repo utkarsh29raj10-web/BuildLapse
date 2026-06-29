@@ -6,7 +6,7 @@ export function middleware(req: NextRequest) {
     const hostname = req.headers.get('host') || '';
 
     if (hostname.startsWith('app.')) {
-        url.pathname = `/apps${url.pathname}`;
+        url.pathname = `/app${url.pathname}`;
         return NextResponse.rewrite(url);
     }
 
@@ -16,6 +16,6 @@ export function middleware(req: NextRequest) {
 
 export const config = {
     matcher: [
-        '/((?!api|_next/static|_next/image|favicon.ico).*)'
+        '/((?!api|_next|favicon.ico).*)'
     ],
 };
